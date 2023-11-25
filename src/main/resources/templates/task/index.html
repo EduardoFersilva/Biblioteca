@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Minha task de Compras</title>
+    <style>
+
+    
+    </style>
+</head>
+<body >
+    <div class='box'>
+        <div class='wave -one'></div>
+        <div class='wave -two'></div>
+        <div class='wave -three'></div>
+    </div>
+    
+    <h1 style="text-align: center;">Lista de Compras</h1> 
+
+    <div class="content">
+        <div class="tasks">
+            <div class="card-task" th:each = "task : ${tasks}">
+                <h2 th:text="${task.title}"></h2>
+                <p th:text="${task.description}"></p>
+                <div class="action">
+                    <form th:action="@{'/task/{id}'(id=${task.id})}" th:method="delete">
+                        <button class="btn red">Apagar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <a href="/task/new" class="btn">Nova task</a>
+    </div>
+
+</body>
+</html>
