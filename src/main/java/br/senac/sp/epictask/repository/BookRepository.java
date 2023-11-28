@@ -2,8 +2,8 @@ package br.senac.sp.epictask.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import br.senac.sp.epictask.Model.Task;
+import br.senac.sp.epictask.Model.Book;
 
-public interface TaskRepository extends JpaRepository<Task, Long>{
+public interface BookRepository extends JpaRepository<Book, Long>{
     
 }

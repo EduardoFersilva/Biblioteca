@@ -18,21 +18,21 @@
         <div class='wave -three'></div>
     </div>
     
-    <h1 style="text-align: center;">Lista de Compras</h1> 
+    <h1 style="text-align: center;">Biblioteca</h1> 
 
     <div class="content">
         <div class="tasks">
-            <div class="card-task" th:each = "task : ${tasks}">
-                <h2 th:text="${task.title}"></h2>
-                <p th:text="${task.description}"></p>
+            <div class="card-task" th:each = "book : ${books}">
+                <h2 th:text="${book.title}"></h2>
+                <p th:text="${book.description}"></p>
                 <div class="action">
-                    <form th:action="@{'/task/{id}'(id=${task.id})}" th:method="delete">
-                        <button class="btn red">Apagar</button>
+                    <form th:action="@{'/book/{id}'(id=${book.id})}" th:method="delete">
+                        <button class="btn red">Retirar</button>
                     </form>
                 </div>
             </div>
         </div>
-        <a href="/task/new" class="btn">Nova task</a>
+        <a href="/book/new" class="btn">Adicionar Livro</a>
     </div>
 
 </body>

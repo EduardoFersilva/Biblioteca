@@ -4,7 +4,7 @@ package br.senac.sp.epictask.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.Customizer;
+//import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.web.SecurityFilterChain;
 
@@ -14,7 +14,7 @@ public class SecurityConfig {
     public SecurityFilterChain config(HttpSecurity http) throws Exception {
         
         return http
-            .oauth2Login(auth -> auth.defaultSuccessUrl("/task"))
+            .oauth2Login(auth -> auth.defaultSuccessUrl("/book"))
             .build(); 
     }
 }

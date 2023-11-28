@@ -15,7 +15,7 @@
     </div>
     <h1 style="text-align: center;">Cadastrar Nova Lista</h1>
     <div class="content">
-        <form th:action="${'/task/new'}" method="post" th:object="${task}">
+        <form th:action="${'/book/new'}" method="post" th:object="${book}">
             <label for="title">Título</label>
             <input type="text" th:field="*{title}">
             <span th:erros="*{title}"></span>
@@ -25,7 +25,7 @@
             <span th:erros="*{description}"></span>
 
             <div class="actions">
-                <a href="/task" class="btn">cancelar</a>
+                <a href="/book" class="btn">cancelar</a>
                 <button class="btn blue">Salvar</button>
             </div>
         </form>
