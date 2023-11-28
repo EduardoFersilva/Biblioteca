@@ -5,30 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
-    <title>Cadastrar Nova Lista</title>
+    <title>Saraivo 📚</title>
 </head>
 <body>
-    <div class='box'>
-        <div class='wave -one'></div>
-        <div class='wave -two'></div>
-        <div class='wave -three'></div>
-    </div>
-    <h1 style="text-align: center;">Cadastrar Nova Lista</h1>
-    <div class="content">
-        <form th:action="${'/book/new'}" method="post" th:object="${book}">
-            <label for="title">Título</label>
-            <input type="text" th:field="*{title}">
+    <h1 style="font-size: 40px; text-align: center; color: rgb(216, 216, 33);">Cadastrar novo livro</h1>
+
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+
+        <section class="section_form">
+            <form th:action="${'/book/new'}" method="post" th:object="${book}" id="consultation-form" class="feed-form" action="#">
+
+            <input required="" placeholder="Titulo" type="text" th:field="*{title}">
             <span th:erros="*{title}"></span>
 
-            <label for="description">Descrição</label>
-            <textarea id="description" th:field="*{description}"></textarea>
+            <input name="autor" required="" placeholder="Autor" id="autor" th:field="*{autor}">
+            <span th:erros="*{autor}"></span>
+
+            <input name="launch" required="" placeholder="Ano de Edição" type="number" id="launch" th:field="*{launch}" maxlength="4" oninput="this.value = this.value.slice(0, 4)" max="2023" min="1900">
+            <span th:erros="*{launch}"></span>
+
+            <input name="company" required="" placeholder="Editora" type="text" id="company" th:field="*{company}">
+            <span th:erros="*{company}"></span>
+
+            <input name="language" required="" placeholder="Idioma" type="text" id="language" th:field="*{language}">
+            <span th:erros="*{language}"></span>
+
+            <input name="description" required="" placeholder="Descrição" type="text" id="description" th:field="*{description}" maxlength="20">
             <span th:erros="*{description}"></span>
 
+
             <div class="actions">
-                <a href="/book" class="btn">cancelar</a>
-                <button class="btn blue">Salvar</button>
+                <a href="/book" class="btnDelete" style="text-decoration: none;">Cancelar</a>
+                <button class="btnInsert">Salvar</button>
             </div>
-        </form>
+
+            </form>
+        </section>
+        
+
     </div>
 </body>
 </html>
